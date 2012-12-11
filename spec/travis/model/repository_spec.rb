@@ -5,9 +5,12 @@ describe Repository do
 
   describe '#regenerate_key!' do
     it 'regenerates key' do
-      repo = Factory(:repository)
 
-      expect { repo.regenerate_key! }.to change { repo.key.private_key }
+      repository = Factory(:repository)
+
+      expect {
+        repository.regenerate_key!
+      }.to change { repository.key.private_key }
     end
   end
 
